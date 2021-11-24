@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   # resources :tweets
   resources :users
+  resources :tweets, only: [:create, :edit, :update, :destroy]
 end
