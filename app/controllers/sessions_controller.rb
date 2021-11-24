@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       user = User.find_by(email: params[:session][:email].downcase)
       if user && user.authenticate(params[:session][:password])
         # ログイン後にユーザー情報ページにリダイレクト
-        log_in @user
+        log_in user
         redirect_to user
       else
         # error message
